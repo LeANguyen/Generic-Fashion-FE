@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;1,900&display=swap");
+@import "../components/common/Button.scss";
+@import "../components/common/Text.scss";
+@import "../components/common/Input.scss";
+@import "./Background.scss";
+
+body {
+  margin: 0;
+  font-family: Nunito, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $black;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+@media (min-width: 34em) {
+  .card-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (min-width: 48em) {
+  .card-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+}
+
+@media (min-width: 62em) {
+  .card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+
+@media (min-width: 75em) {
+  .card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+  }
+}
+
+.card {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.divider-light {
+  display: flex;
+  flex-shrink: 0;
+  border-bottom: 1px solid $dim;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divider-dark {
+  display: flex;
+  flex-shrink: 0;
+  border-bottom: 1px solid $dark;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  box-shadow: inset 0 -5px 5px -5px $dark, 0 5px 5px -5px $dark;
+}
+
+.grid-container {
+  grid-row-gap: 30px;
+}

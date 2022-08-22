@@ -1,0 +1,82 @@
+// colors
+$blue: #007bff;
+$purple: #6f42c1;
+$pink: #e83e8c;
+$red: #dc3545;
+$yellow: #ffc107;
+$green: #20c997;
+
+$colors: (
+  blue: $blue,
+  purple: $purple,
+  pink: $pink,
+  red: $red,
+  yellow: $yellow,
+  green: $green
+);
+
+// black & white
+$light: #f8f9fa;
+$white: #ffffff;
+$dim: #dddddd;
+$gray: #6c757d;
+$dark: #343a40;
+$black: #1e1e1e;
+$bw-colors: (
+  light: $light,
+  white: $white,
+  dim: $dim,
+  gray: $gray,
+  dark: $dark,
+  black: $black
+);
+
+// shadow
+$shadow-1: 0 0 5px;
+$shadow-2: 0 0 10px;
+$shadow-3: 0 0 15px;
+$shadow-4: 0 0 20px;
+
+// bootstap colors
+// $blue: #007bff;
+// $indigo: #6610f2;
+// $purple: #6f42c1;
+// $pink: #e83e8c;
+// $red: #dc3545;
+// $orange: #fd7e14;
+// $yellow: #ffc107;
+// $green: #28a745;
+// $teal: #20c997;
+// $cyan: #17a2b8;
+// $light: #f8f9fa;
+// $white: #ffffff;
+// $gray: #6c757d;
+// $dark: #343a40;
+// $black: #202125;
+
+@mixin link($color, $t: 0.3, $h: 1px) {
+  display: inline-block;
+  position: relative;
+
+  &:hover {
+    color: $color;
+    text-decoration: none;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 0;
+    height: $h;
+    background-color: $color;
+    transition: all #{$t}s ease-in-out;
+    box-shadow: $shadow-1 $color, $shadow-2 $color, $shadow-3 $color;
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+}

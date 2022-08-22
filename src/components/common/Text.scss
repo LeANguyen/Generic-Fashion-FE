@@ -1,0 +1,32 @@
+@import "../styles/config.scss";
+
+$font-sizes: (
+  xs: 0.5,
+  sm: 0.75,
+  md: 1,
+  lg: 1.25,
+  xl: 1.5
+);
+
+@each $size-type, $font-size in $font-sizes {
+  .text-#{$size-type} {
+    font-size: #{$font-size}em;
+  }
+}
+
+@each $c-name, $color in $colors {
+  .text-#{$c-name} {
+    color: $color;
+  }
+  .text-#{$c-name}-w {
+    color: $white;
+  }
+  .text-#{$c-name}-w:hover {
+    color: $color;
+    text-shadow: $shadow-1 $color, $shadow-2 $color;
+  }
+  .text-#{$c-name}-g {
+    color: $color;
+    text-shadow: $shadow-1 $color, $shadow-2 $color;
+  }
+}

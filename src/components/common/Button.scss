@@ -1,0 +1,59 @@
+@import "../styles/config.scss";
+
+.app-btn {
+  padding: 8px 14px 8px 14px;
+  border-radius: 2em;
+  border: none;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin color($color) {
+  @extend .app-btn;
+  color: $white;
+  background-color: $color;
+}
+
+@mixin color-hover($color) {
+  filter: brightness(105%);
+  color: $white;
+  text-decoration: none;
+  box-shadow: $shadow-1 $color, $shadow-2 $color;
+}
+
+@mixin color-outline($color) {
+  @extend .app-btn;
+  color: $color;
+  background-color: transparent;
+  border: 2px solid $color;
+}
+
+@mixin color-outline-hover($color) {
+  color: $white;
+  text-decoration: none;
+  background-color: $color;
+  box-shadow: $shadow-1 $color, $shadow-2 $color;
+}
+
+@each $c-name, $color in $colors {
+  .btn-#{$c-name} {
+    @include color($color);
+  }
+  .btn-#{$c-name}:hover {
+    @include color-hover($color);
+  }
+  .btn-#{$c-name}:focus {
+    outline: none;
+  }
+  .btn-outline-#{$c-name} {
+    @include color-outline($color);
+  }
+  .btn-outline-#{$c-name}:hover {
+    @include color-outline-hover($color);
+  }
+  .btn-outline-#{$c-name}:focus {
+    outline: none;
+  }
+}
